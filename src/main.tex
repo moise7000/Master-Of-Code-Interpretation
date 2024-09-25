@@ -23,7 +23,7 @@
 \usepackage[toc,acronym,section=section]{glossaries}
 \usepackage[french]{babel}
 \usepackage{graphicx}
- \usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage{listings}
 
 % to suppress glossaries page break
@@ -89,11 +89,11 @@ scientific documents}
         \vspace{1.9cm}
         Le projet de MOCI\\
         \vspace{1.9cm}
-        \LARGE{Version \myversion draft}\\
+        \LARGE{Version \myversion}\\
         \vspace{1.9cm}
-        Préparé par $<$authors$>$\\
+        Préparé par Amine Salhi, Florian Touraine, Ewan Decima, Hippolyte Cosserat\\
         \vspace{1.9cm}
-        $<$Organization$>$\\
+        Télécom Nancy\\
         \vspace{1.9cm}
         \today\\
     \end{bfseries}
@@ -125,19 +125,18 @@ scientific documents}
 Ce cahier des charges est réalisé dans le cadre du cours de TELECOM Nancy  et fait référence aux livres suivants~\cite{Sommerville:2010:SE:1841764,Pohl:2010:REF:1869735,Rumbaugh:2004:UML:993859}.
 
 \section{Objectif}
-$<$Identifiez le produit dont le cahier des charges va être décrit dans ce document. Indiquez ce que couvre le produit, en particulier si le cahier des charges ne concerne qu'une partie d'un système.$>$
-
-L'objectif du système est de permettre la gestion des absences à TELECOM Nancy. Il doit permettre la saisie des absences par les enseignants, la saisie de leur justification et le décompte de ces absences.
+Le livrable décrit dans ce cahier des charges est un système de gestion des recrutements pour la PME RecrutExpress. L'objectif du système est de simplifier et d'optimiser le processus de recrutement de l'entreprise. Il couvre différentes étapes : de la création des offres d'emploi à l'intégration d'employés. À cet effet, le cahier des charges concerne le système complet et non une partie isolée. Il doit permettre la publication des offres, la gestion des candidatures, la planification des entretiens, la communication avec les candidats, et l'analyse des métriques de recrutement, tout en s'intégrant aux systèmes existants de l'entreprise.
 
 \section{Audience et sections importantes}
-$<$Décrivez les lecteurs potentiels (développeurs, testeurs, marketing, \textit{etc.}) et indiquez quelles sont les parties du document qui leur sont destinées.$>$
-
-Les lecteurs potentiels de ce document sont les développeurs d'une part et la direction des études d'autre part, qui doit pouvoir contrôler que le système fonctionnera bien selon ses attentes.
+Les lecteurs potentiels de ce document sont les développeurs d'une part, la direction de la PME, qui doit pouvoir contrôler que le système fonctionnera bien selon ses attentes.
 
 \section{Portée du projet}
-$<$Donnez une description rapide du logiciel spécifié, son but, les objectifs métiers, les gains attendus et comment il contribue aux objectifs et stratégies de l'organisation.$>$
+Le système est en charge de la gestion du processus de recrutement. Son but est de centraliser et d'automatiser les tâches liées au recrutement, de la publication des offres à l'intégration des nouveaux employés. La saisie de nouveaux formulaire de candidature doit être simplifié au maximum afin de faciliter le travail des ressources humaines.
 
-Le système est en charge de la gestion des absences. La saisie doit être simplifiée au maximum, pour permettre à plus d'enseignants de  relever les absences. Il doit surtout permettre à la direction des études et aux étudiants un suivi plus précis des absences pour permettre une réaction plus rapide en cas de problème.
+Le processus de candidature doit être simplifié au maximum, pour attirer plus de candidats qualifiés et faciliter le travail des recruteurs. 
+
+Il doit permettre au service des ressources humaines ainsi qu'à direction un suivi plus efficace des candidatures et des métriques de recrutement, permettant une prise de décision plus rapide et éclairée.
+
 
 \section{Conventions}
 $<$Décrivez les conventions de nommage et de structure utilisées au long du document ; indiquez de quelle façon ces conventions peuvent aider le lecteur.$>$
@@ -152,10 +151,104 @@ Le Fascicule 0 contient les règles de la gestion des absences.
 $<$Indiquez le contexte et l'origine du produit ainsi que les fonctionnalités attendues. $>$
 
 \section{Principales fonctionnalités}
-$<$Indiquez ici les fonctionnalités principales du produit ainsi que les acteurs et leurs caractéristiques. $>$
 
-\section{Présentation des utilisateurs}
-$<$Définir les groupes d'utilisateurs et leurs caractéristiques $>$
+\subsection{Gestion des candidatures}
+\begin{itemize}
+    \item Gestion totale des formulaires de candidature
+    \item Système de proposition de formulaire de candidature
+    \item Consultation, recherche et filtrage facile les profils et candidatures
+    \item Sauvegarde des décisions
+    \item Système de préselection soumis à l'équipe de direction
+    \item Utilisation de modèles de mails pré-écrits et envois automatiques, gestion facile des rendez-vous avec tous les partis concernés
+\end{itemize}
+
+\subsection{Administration du système}
+\begin{itemize}
+    \item Création et gestion de rôles pour faciliter le recrutement
+    \item Tableau de bord du système pour accéder aux informations les plus essentielles
+    \item Suivi et gestion de métriques
+\end{itemize}
+
+\subsection{Capacité d'intégration}
+\begin{itemize}
+    \item Le logiciel s’intégre dans une hiérarchie LDAP et avec les systèmes internes de gestion de paye et ERP pour spécifier l’embauche
+    \item Multiples intégrations avec des sites d'annonces d'emplois, 
+\end{itemize}
+
+\subsection{Sécurité et confidentialité}
+\begin{itemize}
+    \item Système sécurisé par SSO
+    \item Journaux et historiques d'actions sur les données privées
+    \item Logiciel conforme à la RGPD
+\end{itemize}
+
+\subsection{Interface pour les candidats}
+\begin{itemize}
+    \item Authentification rapide
+    \item Consultation des informations transmises et suivi candidatures
+    \item Contrôle total des données personnelles
+    \item Retour sur l'expérience de canditure
+\end{itemize}
+
+\section{Description des utilisateurs}
+
+Le système de gestion des recrutements de RecrutExpress est conçu pour répondre aux besoins de plusieurs types d'utilisateurs au sein de l'organisation. Voici les principaux groupes d'utilisateurs identifiés :
+
+\subsection{Service Ressources Humaines (RH)}
+\begin{itemize}
+    \item Le service RH est responsable de la gestion quotidienne du processus de recrutement.
+
+    \item Le service RH est en charge de la planification de rendez vous suite à une candidature.
+
+    \item Le service RH  conceptualise les offres d'emploi et formulaires de candidature associé
+
+    \item Le service RH rédige les modèles de mails automatiques : accusé réception de rendez vous, refus ou validation d'embauche ...
+
+    \item Le service RH est en charge de la génération de métriques
+    
+     
+\end{itemize}
+
+\subsection{Candidats}
+\begin{itemize}
+    \item Les candidats externes utilisent le système pour postuler et suivre leurs candidatures.
+    \item  Les employés peuvent postuler à de nouveaux postes au sein de l'entreprise.
+\end{itemize}
+
+\subsection{Administrateurs Système}
+\begin{itemize}
+    \item Les administrateurs système gèrent les accès utilisateurs.
+    \item Les administrateurs système sont en charge des protocoles sécurité.  
+    \item Les administrateurs système supervise la maintenance du système.
+    \item Les administrateurs système assurent la conformité RGPD et la sécurité des données.
+    \item Les administrateurs système sont responsables de l'intégration du système avec d'autres outiles de l'entreprise (Google Workspace, ERP ...).
+    \item Les administrateurs système sont responsables de la création et de l’attribution des rôles, lesquels définissent les privilèges au sein du système d’information.
+    \item Après formation, les administrateurs système assistent les différents utilisateurs internes en cas de problème technique.
+
+\end{itemize}
+
+
+
+\subsection{Direction}
+\begin{itemize}
+    \item Le service de direction approuve, ou nrefuse, les candidatures, la validation des besoins en recrutement et les décisions d'embauche.
+    \item Surveille les indicateurs clés de performance (KPI) liés au recrutement.
+\end{itemize}
+
+\subsection{Services de Production}
+\begin{itemize}
+    \item Définissent les besoins en personnel et participent au processus de sélection.
+    \item Peuvent être impliqués dans les entretiens et l'évaluation des compétences techniques.
+\end{itemize}
+
+\subsection{Service Comptable}
+\begin{itemize}
+    \item  Ont besoin d'accéder aux informations des nouveaux employés pour la gestion de la paie.
+\end{itemize}
+
+
+
+Chaque groupe d'utilisateurs aura des besoins spécifiques et des niveaux d'accès différents au sein du système, ce qui devra être pris en compte dans la conception et le développement de l'application.
 
 \section{Environnement opérationnel}
 $<$Expliquez où et comment va s'exécuter le logiciel : matériel, système et autres composants logiciels qui seront utilisés $>$
